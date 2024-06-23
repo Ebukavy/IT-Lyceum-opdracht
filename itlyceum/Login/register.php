@@ -1,9 +1,9 @@
 <?php require_once('../header.php'); 
 session_start();
 
-// Redirect to homepage if user is already logged in
-if (isset($_SESSION['student_id'])) {
-    header("Location: /itlyceum/home/Homepage.php"); // Redirect to homepage or dashboard
+// Check if user is already logged in
+if (isset($_SESSION['id']) || isset($_SESSION['student_id'])) {
+    header("Location: /itlyceum/home/Homepage.php"); // Redirect to home page or dashboard
     exit();
 }
 ?>

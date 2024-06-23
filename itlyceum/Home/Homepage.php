@@ -9,6 +9,8 @@ if (!isset($_SESSION['student_id']) && !isset($_SESSION['id'])) {
     exit();
 }
 
+// Assume role_id 2 corresponds to 'Docent'
+$isDocent = isset($_SESSION['role']) && $_SESSION['role'] == 3;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,21 +37,33 @@ if (!isset($_SESSION['student_id']) && !isset($_SESSION['id'])) {
         </div>
 
         <div class="row">
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Rooster</h5>
-                        <p class="card-text">Bekijk je rooster en je lesplanning.</p>
-                        <a href="rooster.php" class="btn btn-primary">Bekijk Rooster</a>
+            <?php if ($isDocent): ?>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Docent Informatie</h5>
+                            <p class="card-text">Bekijk je persoonlijke informatie en meer.</p>
+                            <a href="/itlyceum/docent/Docentpage.php" class="btn btn-primary">Bekijk Docent Informatie</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php else: ?>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Rooster</h5>
+                            <p class="card-text">Bekijk je rooster en je lesplanning.</p>
+                            <a href="rooster.php" class="btn btn-primary">Bekijk Rooster</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
             <div class="col-md-6">
                 <div class="card mb-4">
                     <div class="card-body">
                         <h5 class="card-title">Klasinformatie</h5>
                         <p class="card-text">Informatie over je klas en medestudenten.</p>
-                        <a href="klassen.php" class="btn btn-primary">Bekijk Klasinformatie</a>
+                        <a href="/itlyceum/klas/klasinfo.php" class="btn btn-primary">Bekijk Klasinformatie</a>
                     </div>
                 </div>
             </div>

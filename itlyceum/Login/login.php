@@ -2,7 +2,7 @@
 session_start();
 
 // Check if user is already logged in
-if (isset($_SESSION['user_id']) || isset($_SESSION['student_id'])) {
+if (isset($_SESSION['id']) || isset($_SESSION['student_id'])) {
     header("Location: /itlyceum/home/Homepage.php"); // Redirect to home page or dashboard
     exit();
 }
