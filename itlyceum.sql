@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Jun 21, 2024 at 02:27 AM
+-- Generation Time: Jun 24, 2024 at 01:20 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -95,8 +95,9 @@ CREATE TABLE `studenten` (
 
 INSERT INTO `studenten` (`ID`, `Naam`, `Email`, `Password`, `Klas`) VALUES
 (1, 'valerio', 'lolo@hotmail.com', '$2y$10$.EVGEDLMD1k94R0MDHtq8eoVSqOW0Dg/WE3va55j1XDERwIrYIyPi', 2),
-(2, 'robert', 'robert@lol.com', '$2y$10$7NfkqPT47yPhBbzcs3oqN.wl3QWufFWWdxgrdADQqM/P7ssCyfoyW', 2),
-(3, 'Tengo', 'Tengo@lol.com', '$2y$10$7fvcN3lofCQuyWFesk/ESuQ9cRmXfhCe/e5knhta7anMH6Z/BLzPe', 3);
+(2, 'robert', 'robert@lol.com', '$2y$10$7NfkqPT47yPhBbzcs3oqN.wl3QWufFWWdxgrdADQqM/P7ssCyfoyW', 3),
+(3, 'Tengo', 'Tengo@lol.com', '$2y$10$7fvcN3lofCQuyWFesk/ESuQ9cRmXfhCe/e5knhta7anMH6Z/BLzPe', 3),
+(4, 'John Blick', 'johnblick@hotmail.com', '$2y$10$WskKjWNNh4j/NuvLNuXrZOFilhLNi./l9vvFL6DJhBQIb3u1xsSGa', 1);
 
 -- --------------------------------------------------------
 
@@ -118,7 +119,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `Email`, `password`, `role_id`) VALUES
 (1, 'Henk Freddy', 'henk@lol.nl', '$2y$10$ucF2zN1NRULaadzJOSgt4eiELU5TxgDYQbBnEr1xXlRllw//txpUO', 3),
-(12, 'os', 'os@gmail.com', '$2y$10$RtNrAW03TAKLUIPDTV7HNOcBFA8oislzG30Fva4vt2L.0iM0Mo4Xu', 3);
+(12, 'osman', 'os@hotmail.com', '$2y$10$Cpn90D7R3o4aOXL.0VV4UeqL8x0/IPSg9XoeyQO0tNYdV53/B2OHW', 3),
+(13, 'Jones', 'Jones@hotmail.com', '$2y$10$fMq7lS/i/yP3iRJfFr1dquAzj49n2dbeJWAy46A9REQEnnmzqG1DS', 1),
+(14, 'buka', 'buka@hotmail.com', '$2y$10$sc1wyGoPGFNrG7Om4C9zFeMRE6PeHAdQ9tVWOyS3Kt3cN204DSxr6', 3);
 
 --
 -- Indexes for dumped tables
@@ -159,19 +162,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `klas`
 --
 ALTER TABLE `klas`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `studenten`
 --
 ALTER TABLE `studenten`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
