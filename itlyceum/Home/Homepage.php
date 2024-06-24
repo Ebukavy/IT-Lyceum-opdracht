@@ -15,6 +15,10 @@ $isDocent = isset($_SESSION['role']) && $_SESSION['role'] == 3;
 // Assume role_id 1 corresponds to 'Manager'
 $isManager = isset($_SESSION['role']) && $_SESSION['role'] == 1;
 
+$isRoostermaker = isset($_SESSION['role']) && $_SESSION['role'] == 2;
+
+$isMentor = isset($_SESSION['role']) && $_SESSION['role'] == 4;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +69,31 @@ $isManager = isset($_SESSION['role']) && $_SESSION['role'] == 1;
                 </div>
             <?php endif; ?>
 
-            <?php if (!$isDocent && !$isManager): ?>
+            <?php if ($isMentor): ?>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Mentor Dashboard</h5>
+                            <p class="card-text">Beheer schoolinformatie en meer.</p>
+                            <a href="/itlyceum/manager/Managerpage.php" class="btn btn-primary">Bekijk Mentor Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($isRoostermaker): ?>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Roostermaker Dashboard</h5>
+                            <p class="card-text">Beheer schoolinformatie en meer.</p>
+                            <a href="/itlyceum/roostermaker/Roostermakerpage.php" class="btn btn-primary">Bekijk Roostermaker Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!$isDocent && !$isManager && !$isRoostermaker && !$isMentor): ?>
                 <div class="col-md-6">
                     <div class="card mb-4">
                         <div class="card-body">

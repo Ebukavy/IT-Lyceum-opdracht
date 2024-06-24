@@ -47,7 +47,7 @@
                     <a class="nav-link" href="/itlyceum/klas/klasinfo.php">Klassen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/rooster.php">Rooster</a>
+                    <a class="nav-link" href="/itlyceum/rooster/roosterpage.php">Rooster</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/gebruikers.php">Gebruikers</a>
