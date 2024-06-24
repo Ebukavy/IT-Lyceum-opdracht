@@ -9,8 +9,12 @@ if (!isset($_SESSION['student_id']) && !isset($_SESSION['id'])) {
     exit();
 }
 
-// Assume role_id 2 corresponds to 'Docent'
+// Assume role_id 3 corresponds to 'Docent'
 $isDocent = isset($_SESSION['role']) && $_SESSION['role'] == 3;
+
+// Assume role_id 1 corresponds to 'Manager'
+$isManager = isset($_SESSION['role']) && $_SESSION['role'] == 1;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +51,21 @@ $isDocent = isset($_SESSION['role']) && $_SESSION['role'] == 3;
                         </div>
                     </div>
                 </div>
-            <?php else: ?>
+            <?php endif; ?>
+
+            <?php if ($isManager): ?>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Manager Dashboard</h5>
+                            <p class="card-text">Beheer schoolinformatie en meer.</p>
+                            <a href="/itlyceum/manager/Managerpage.php" class="btn btn-primary">Bekijk Manager Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!$isDocent && !$isManager): ?>
                 <div class="col-md-6">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -58,6 +76,7 @@ $isDocent = isset($_SESSION['role']) && $_SESSION['role'] == 3;
                     </div>
                 </div>
             <?php endif; ?>
+
             <div class="col-md-6">
                 <div class="card mb-4">
                     <div class="card-body">
